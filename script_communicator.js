@@ -1,9 +1,9 @@
 /*
  * Implementation of script communication that:
- *    - can be used to implement long polling (comet)
- *    - works on all major browsers (IE, FF, Safari, Chrome and Opera)
- *    - works across domains as long as you control the domains
- *    - small implementation
+ *  - uses script tags for communication, but can detect when a script isn't loaded (this is non-trivial to implement across browsers)
+ *  - works across domains as long as you control the domains
+ *  - works on IE 6, IE 7, IE 8, FF X, Safari, Chrome and Opera
+ *  - small (80 lines of code) with no dependencies
  *
  * For more info and usage check out:
  *    http://amix.dk/blog/post/19489#ScriptCommunicator-implementing-comet-long-polling-for-all-browse
