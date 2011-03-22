@@ -50,6 +50,9 @@ ScriptCommunicator = {
             if(agent.indexOf("msie") != -1) { //IE
                 script_channel.onreadystatechange = ScriptCommunicator.onSuccess;
             }
+            else if(agent.indexOf('firefox/4.0')) {
+                script_channel.onload = ScriptCommunicator._onSuccess;
+            }
             else {
                 var loaded = document.createElement('script');
                 loaded.type = "text/javascript";
