@@ -50,17 +50,16 @@ ScriptCommunicator = {
             if(agent.indexOf("msie") != -1) { //IE
                 script_channel.onreadystatechange = ScriptCommunicator.onSuccess;
             }
+            else if(agent.indexOf('firefox/4.0')) {
+                script_channel.onload = function() {
+                    eval(loaded_text);
+                }
+            }
             else {
                 var loaded = document.createElement('script');
                 loaded.type = "text/javascript";
                 loaded.className = 'temp_script';
                 loaded.text = loaded_text;
-            }
-
-            if(agent.indexOf('firefox/4.0')) {
-                script_channel.onload = function() {
-                    eval(loaded_text);
-                }
             }
 
             var body = document.getElementsByTagName('body')[0];
